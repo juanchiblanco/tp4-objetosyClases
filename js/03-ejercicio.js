@@ -27,7 +27,7 @@ class Rectangulos{
 
     area(){
         const area = this.#ancho*this.#alto
-         document.writeln(`<p>El area del rectangulo es: ${area}m</p>`)
+         document.writeln(`<p>El area del rectangulo es: ${area}m²</p>`)
      }
 }
 
