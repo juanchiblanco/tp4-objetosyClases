@@ -3,7 +3,7 @@ const cuenta = {
     saldo: 0,
 
     informar: function(){
-        document.writeln(`<p>El saldo es $${this.saldo}</p>`);
+        document.writeln(`${cuenta.titular}, tu saldo actual es $${this.saldo}</p>`);
     },
     ingresar: function(){
         const deposito = parseFloat(prompt("Ingresa el monto a depositar"));
@@ -14,8 +14,35 @@ const cuenta = {
         const extraccion = parseFloat(prompt("Ingresa el monto a extraer"))
         if(extraccion<=this.saldo){
             this.saldo= this.saldo - extraccion
-            document.writeln(`"Monto a extraer $${extraccion}, tu saldo actual es $${this.saldo}`)
-        }else{document.writeln("No puedes extraer esa cantidad de dinero")};
+            document.writeln(`<p>Monto a extraer $${extraccion}, tu saldo actual es $${this.saldo}</p>`)
+        }else{document.writeln("<p>No puedes extraer esa cantidad de dinero</p>")};
 
     }
 }
+
+do{
+    const opcion = parseInt(prompt('Seleccione una opcion: 1-Consultar saldo, 2-Depositar dinero, 3-Extraer dinero, 4-Salir'))
+
+    switch(opcion){
+        case 1: cuenta.informar();
+        break;
+    
+        case 2: cuenta.ingresar();
+        break;
+    
+        case 3: cuenta.extraer();
+            break;
+    
+        case 4:
+            document.writeln(`<p>Hasta pronto ${cuenta.titular}, tu saldo final es $${cuenta.saldo}</p>`)
+            document.writeln(`<p>Cerrando el sistema...</p>`);
+            break;
+    
+            default:
+    
+            document.writeln(`<p>Ingresaste una opcion invalida</p>`)
+    }
+
+}
+
+while(confirm(`Deseas realizar otra opcion?`))
