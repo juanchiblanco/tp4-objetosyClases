@@ -33,3 +33,9 @@ const aion = new Libro ('9620154879254', 'Aion', 'Carl Gustav Jung', 512)
 elExtranjero.mostrarLibro()
 laGayaCiencia.mostrarLibro()
 aion.mostrarLibro()
+
+const mayorNumPaginas = Math.max(elExtranjero.getNumPaginas,laGayaCiencia.getNumPaginas,aion.getNumPaginas)
+
+if(mayorNumPaginas===elExtranjero.getNumPaginas){document.writeln(`El libro ${elExtranjero.getTitulo} de ${elExtranjero.getAutor} tiene la mayor cantidad de paginas con ${elExtranjero.getNumPaginas} paginas.`)}
+else if (mayorNumPaginas===laGayaCiencia.getNumPaginas){document.writeln(`El libro ${laGayaCiencia.getTitulo} de ${laGayaCiencia.getAutor} tiene la mayor cantidad de paginas con ${laGayaCiencia.getNumPaginas} paginas.`)}
+else{document.writeln(`El libro ${aion.getTitulo} de ${aion.getAutor} tiene la mayor cantidad de paginas con ${aion.getNumPaginas} paginas.`)}
