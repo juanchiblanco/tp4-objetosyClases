@@ -36,15 +36,15 @@ class Persona {
   }
 
   esMayorDeEdad() {
-    if (this.edad >=18) {
+    if (this.edad >= 18) {
       document.writeln("<p>Eres mayor de edad</p>");
     } else {
       document.writeln("<p>Eres menor de edad</p>");
     }
   }
 
-  mostrarDatos(){
-    document.writeln(`<h2>${this.nombre}</h2>`)
+  mostrarDatos() {
+    document.writeln(`<h2>${this.nombre}</h2>`);
     document.writeln(`<ul>
         <li>Edad: ${this.edad}</li>
         <li>DNI: ${this.dni}</li>
@@ -52,32 +52,47 @@ class Persona {
         <li>Altura: ${this.altura}cm</li>
         <li>Peso: ${this.peso}kg</li>
         <li>Año de Nacimiento: ${this.anoNacimiento}</li>
-        </ul>`)
+        </ul>`);
   }
 
-  generarDni(){
-    this.dni =Math.floor((Math.random() * 99999999) + 1);
+  generarDni() {
+    this.dni = Math.floor(Math.random() * 99999999 + 1);
   }
 }
 
-const juan = new Persona ('Juan','15',this.dni,'H (hombre)','60','174',2010)
-const guadalupe = new Persona ('Guadalupe','85',this.dni,'M (mujer)','48','162',1940)
+const juan = new Persona(
+  "Juan",
+  "15",
+  this.dni,
+  "H (hombre)",
+  "60",
+  "174",
+  2010
+);
+const guadalupe = new Persona(
+  "Guadalupe",
+  "85",
+  this.dni,
+  "M (mujer)",
+  "48",
+  "162",
+  1940
+);
 
-console.log(juan)
+console.log(juan);
 
+juan.generarDni();
 
-juan.generarDni()
+juan.mostrarDatos();
 
-juan.mostrarDatos()
+juan.mostrarGeneracion();
 
-juan.mostrarGeneracion()
+juan.esMayorDeEdad();
 
-juan.esMayorDeEdad()
+guadalupe.generarDni();
 
-guadalupe.generarDni()
+guadalupe.mostrarDatos();
 
-guadalupe.mostrarDatos()
+guadalupe.mostrarGeneracion();
 
-guadalupe.mostrarGeneracion()
-
-guadalupe.esMayorDeEdad()
+guadalupe.esMayorDeEdad();
