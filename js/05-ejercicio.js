@@ -36,7 +36,7 @@ class Persona {
   }
 
   esMayorDeEdad() {
-    if (this.edad % 2 === 0) {
+    if (this.edad >=18) {
       document.writeln("<p>Eres mayor de edad</p>");
     } else {
       document.writeln("<p>Eres menor de edad</p>");
@@ -49,8 +49,8 @@ class Persona {
         <li>Edad: ${this.edad}</li>
         <li>DNI: ${this.dni}</li>
         <li>Sexo: ${this.sexo}</li>
-        <li>Altura: ${this.altura}</li>
-        <li>Peso: ${this.peso}</li>
+        <li>Altura: ${this.altura}cm</li>
+        <li>Peso: ${this.peso}kg</li>
         <li>Año de Nacimiento: ${this.anoNacimiento}</li>
         </ul>`)
   }
@@ -60,15 +60,24 @@ class Persona {
   }
 }
 
-// const juan = new Persona ('Juan','15',this.dni,'Hombre','50','174',1940)
+const juan = new Persona ('Juan','15',this.dni,'H (hombre)','60','174',2010)
+const guadalupe = new Persona ('Guadalupe','85',this.dni,'M (mujer)','48','162',1940)
 
-// console.log(juan)
+console.log(juan)
 
 
-// juan.generarDni()
+juan.generarDni()
 
-// juan.mostrarDatos()
+juan.mostrarDatos()
 
-// juan.mostrarGeneracion()
+juan.mostrarGeneracion()
 
-// juan.esMayorDeEdad()
+juan.esMayorDeEdad()
+
+guadalupe.generarDni()
+
+guadalupe.mostrarDatos()
+
+guadalupe.mostrarGeneracion()
+
+guadalupe.esMayorDeEdad()
